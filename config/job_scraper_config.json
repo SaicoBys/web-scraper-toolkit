@@ -1,0 +1,25 @@
+{
+  "keywords": ["python", "developer", "remote", "data analyst", "software engineer"],
+  "locations": ["remote", "usa", "canada", "uk"],
+  "target_sites": [
+    "indeed.com",
+    "linkedin.com/jobs",
+    "glassdoor.com",
+    "monster.com",
+    "dice.com"
+  ],
+  "rate_limit": 2,
+  "max_results": 100,
+  "output_format": "csv",
+  "user_agents": [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0"
+  ],
+  "filters": {
+    "min_salary": 50000,
+    "max_salary": 200000,
+    "experience_levels": ["entry", "mid", "senior"],
+    "job_types": ["full-time", "contract", "remote"]
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "industries": [
+    "technology",
+    "healthcare",
+    "finance",
+    "education",
+    "manufacturing",
+    "retail",
+    "consulting"
+  ],
+  "locations": [
+    "usa",
+    "canada",
+    "uk",
+    "australia",
+    "germany"
+  ],
+  "company_sizes": [
+    "startup",
+    "small",
+    "medium",
+    "large",
+    "enterprise"
+  ],
+  "target_titles": [
+    "CEO",
+    "CTO",
+    "VP of Sales",
+    "Marketing Director",
+    "Head of Growth",
+    "VP of Engineering",
+    "Sales Manager",
+    "Business Development Manager"
+  ],
+  "qualification_criteria": {
+    "min_lead_score": 70,
+    "email_required": true,
+    "phone_required": false,
+    "company_size_filter": ["medium", "large", "enterprise"]
+  },
+  "rate_limit": 2,
+  "max_results": 100,
+  "output_format": "csv",
+  "data_sources": [
+    "linkedin.com/company",
+    "crunchbase.com",
+    "angel.co",
+    "glassdoor.com/company"
+  ]
+}

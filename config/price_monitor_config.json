@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "name": "MacBook Pro 13\"",
+      "category": "Electronics",
+      "target_price": 1200,
+      "urls": [
+        "https://www.amazon.com/dp/example",
+        "https://www.bestbuy.com/site/example"
+      ]
+    },
+    {
+      "name": "iPhone 14",
+      "category": "Electronics", 
+      "target_price": 800,
+      "urls": [
+        "https://www.apple.com/iphone-14/",
+        "https://www.amazon.com/dp/example"
+      ]
+    }
+  ],
+  "target_sites": [
+    "amazon.com",
+    "bestbuy.com",
+    "target.com",
+    "walmart.com",
+    "newegg.com"
+  ],
+  "check_interval": 300,
+  "price_change_threshold": 0.05,
+  "rate_limit": 3,
+  "output_format": "csv",
+  "notifications": {
+    "email_alerts": true,
+    "price_drop_threshold": 0.1,
+    "stock_alerts": true
+  },
+  "storage": {
+    "save_history": true,
+    "max_history_days": 30
+  }
+}
