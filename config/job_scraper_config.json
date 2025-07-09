@@ -1,25 +1,85 @@
 {
-  "keywords": ["python", "developer", "remote", "data analyst", "software engineer"],
-  "locations": ["remote", "usa", "canada", "uk"],
-  "target_sites": [
-    "indeed.com",
-    "linkedin.com/jobs",
-    "glassdoor.com",
-    "monster.com",
-    "dice.com"
-  ],
-  "rate_limit": 2,
-  "max_results": 100,
-  "output_format": "csv",
-  "user_agents": [
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36",
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0"
-  ],
-  "filters": {
-    "min_salary": 50000,
-    "max_salary": 200000,
-    "experience_levels": ["entry", "mid", "senior"],
-    "job_types": ["full-time", "contract", "remote"]
+  "scraper_name": "Job Market Intelligence Engine",
+  "version": "2.0.0",
+  "description": "Enterprise-grade job market data extraction and analysis",
+  
+  "target_sites_csv": "config/target_sites.csv",
+  "target_categories": ["job_board", "company"],
+  "min_priority": "medium",
+  
+  "search_parameters": {
+    "default_keywords": [
+      "python developer",
+      "data scientist",
+      "machine learning engineer",
+      "software engineer",
+      "full stack developer"
+    ],
+    "default_locations": [
+      "remote",
+      "san francisco",
+      "new york",
+      "seattle",
+      "austin"
+    ],
+    "experience_levels": [
+      "entry",
+      "mid",
+      "senior",
+      "lead"
+    ]
+  },
+  
+  "extraction_settings": {
+    "max_results": 1000,
+    "rate_limit": 2,
+    "timeout": 30,
+    "retry_attempts": 3,
+    "include_salary": true,
+    "include_company_info": true,
+    "include_job_description": true,
+    "include_requirements": true,
+    "include_benefits": true
+  },
+  
+  "data_processing": {
+    "clean_data": true,
+    "validate_emails": true,
+    "geocode_locations": true,
+    "categorize_skills": true,
+    "extract_salary_ranges": true,
+    "classify_experience_level": true
+  },
+  
+  "output_settings": {
+    "default_format": "excel",
+    "available_formats": ["csv", "json", "excel"],
+    "include_timestamp": true,
+    "compress_output": false,
+    "backup_previous": true
+  },
+  
+  "reporting": {
+    "generate_summary": true,
+    "include_charts": true,
+    "salary_analysis": true,
+    "trend_analysis": true,
+    "company_insights": true,
+    "skill_demand_analysis": true
+  },
+  
+  "monitoring": {
+    "log_level": "INFO",
+    "track_performance": true,
+    "alert_on_errors": true,
+    "save_session_data": true
+  },
+  
+  "ethical_compliance": {
+    "respect_robots_txt": true,
+    "user_agent_rotation": true,
+    "rate_limiting": true,
+    "no_personal_data": true,
+    "compliance_logging": true
   }
 }

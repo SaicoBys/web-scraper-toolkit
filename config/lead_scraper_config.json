@@ -1,50 +1,145 @@
 {
-  "industries": [
-    "technology",
-    "healthcare",
-    "finance",
-    "education",
-    "manufacturing",
-    "retail",
-    "consulting"
+  "scraper_name": "Lead Generation Engine",
+  "version": "2.0.0",
+  "description": "Enterprise-grade lead generation and prospect database building",
+  
+  "target_industries": [
+    {
+      "name": "Technology",
+      "keywords": ["software", "saas", "tech", "digital"],
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "Fintech",
+      "keywords": ["fintech", "financial", "payments", "banking"],
+      "enabled": true,
+      "priority": 2
+    },
+    {
+      "name": "Healthcare",
+      "keywords": ["healthcare", "medical", "pharma", "biotech"],
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "E-commerce",
+      "keywords": ["ecommerce", "retail", "online", "shopping"],
+      "enabled": true,
+      "priority": 4
+    }
   ],
-  "locations": [
-    "usa",
-    "canada",
-    "uk",
-    "australia",
-    "germany"
+  
+  "company_size_ranges": [
+    {
+      "range": "10-50",
+      "description": "Startup",
+      "enabled": true
+    },
+    {
+      "range": "50-200",
+      "description": "Growth Stage",
+      "enabled": true
+    },
+    {
+      "range": "200-1000",
+      "description": "Mid-Market",
+      "enabled": true
+    },
+    {
+      "range": "1000+",
+      "description": "Enterprise",
+      "enabled": true
+    }
   ],
-  "company_sizes": [
-    "startup",
-    "small",
-    "medium",
-    "large",
-    "enterprise"
+  
+  "geographic_targets": [
+    {
+      "region": "North America",
+      "countries": ["USA", "Canada"],
+      "cities": ["New York", "San Francisco", "Seattle", "Austin", "Toronto"],
+      "enabled": true
+    },
+    {
+      "region": "Europe",
+      "countries": ["UK", "Germany", "Netherlands", "Sweden"],
+      "cities": ["London", "Berlin", "Amsterdam", "Stockholm"],
+      "enabled": true
+    },
+    {
+      "region": "Asia Pacific",
+      "countries": ["Singapore", "Australia", "Japan"],
+      "cities": ["Singapore", "Sydney", "Tokyo"],
+      "enabled": true
+    }
   ],
-  "target_titles": [
-    "CEO",
-    "CTO",
-    "VP of Sales",
-    "Marketing Director",
-    "Head of Growth",
-    "VP of Engineering",
-    "Sales Manager",
-    "Business Development Manager"
-  ],
-  "qualification_criteria": {
-    "min_lead_score": 70,
-    "email_required": true,
-    "phone_required": false,
-    "company_size_filter": ["medium", "large", "enterprise"]
+  
+  "data_extraction": {
+    "max_results": 2000,
+    "rate_limit": 3,
+    "timeout": 45,
+    "retry_attempts": 3,
+    "extract_company_info": true,
+    "extract_contact_info": true,
+    "extract_social_profiles": true,
+    "extract_website_info": true,
+    "extract_funding_info": true
   },
-  "rate_limit": 2,
-  "max_results": 100,
-  "output_format": "csv",
-  "data_sources": [
-    "linkedin.com/company",
-    "crunchbase.com",
-    "angel.co",
-    "glassdoor.com/company"
-  ]
+  
+  "verification_settings": {
+    "verify_emails": true,
+    "verify_phones": true,
+    "verify_websites": true,
+    "check_linkedin_profiles": true,
+    "validate_company_data": true,
+    "duplicate_detection": true
+  },
+  
+  "lead_scoring": {
+    "enabled": true,
+    "criteria": {
+      "company_size_weight": 0.2,
+      "industry_relevance": 0.25,
+      "contact_quality": 0.3,
+      "geographic_match": 0.15,
+      "social_presence": 0.1
+    },
+    "score_thresholds": {
+      "high_quality": 0.8,
+      "medium_quality": 0.6,
+      "low_quality": 0.4
+    }
+  },
+  
+  "output_settings": {
+    "default_format": "excel",
+    "available_formats": ["csv", "json", "excel"],
+    "include_scoring": true,
+    "include_verification_status": true,
+    "include_metadata": true,
+    "backup_previous": true
+  },
+  
+  "crm_integration": {
+    "salesforce_ready": true,
+    "hubspot_ready": true,
+    "pipedrive_ready": true,
+    "custom_mapping": true
+  },
+  
+  "ethical_compliance": {
+    "respect_robots_txt": true,
+    "rate_limiting": true,
+    "no_personal_data": false,
+    "gdpr_compliant": true,
+    "can_spam_compliant": true,
+    "opt_out_respect": true
+  },
+  
+  "monitoring": {
+    "log_level": "INFO",
+    "track_performance": true,
+    "alert_on_errors": true,
+    "quality_metrics": true
+  }
 }

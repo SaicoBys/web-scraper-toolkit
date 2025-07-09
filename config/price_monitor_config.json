@@ -1,42 +1,160 @@
 {
-  "products": [
+  "scraper_name": "Price Monitoring System",
+  "version": "2.0.0",
+  "description": "Enterprise-grade competitive price monitoring and market intelligence",
+  
+  "target_ecommerce_sites": [
     {
-      "name": "MacBook Pro 13\"",
-      "category": "Electronics",
-      "target_price": 1200,
-      "urls": [
-        "https://www.amazon.com/dp/example",
-        "https://www.bestbuy.com/site/example"
-      ]
+      "name": "Amazon",
+      "base_url": "https://www.amazon.com",
+      "enabled": true,
+      "priority": 1,
+      "rate_limit": 5
     },
     {
-      "name": "iPhone 14",
-      "category": "Electronics", 
-      "target_price": 800,
-      "urls": [
-        "https://www.apple.com/iphone-14/",
-        "https://www.amazon.com/dp/example"
-      ]
+      "name": "eBay",
+      "base_url": "https://www.ebay.com",
+      "enabled": true,
+      "priority": 2,
+      "rate_limit": 3
+    },
+    {
+      "name": "Walmart",
+      "base_url": "https://www.walmart.com",
+      "enabled": true,
+      "priority": 3,
+      "rate_limit": 4
+    },
+    {
+      "name": "Target",
+      "base_url": "https://www.target.com",
+      "enabled": true,
+      "priority": 4,
+      "rate_limit": 4
     }
   ],
-  "target_sites": [
-    "amazon.com",
-    "bestbuy.com",
-    "target.com",
-    "walmart.com",
-    "newegg.com"
+  
+  "product_categories": [
+    {
+      "name": "Electronics",
+      "keywords": ["laptop", "smartphone", "tablet", "headphones"],
+      "enabled": true,
+      "priority": 1
+    },
+    {
+      "name": "Home & Garden",
+      "keywords": ["furniture", "kitchen", "garden", "tools"],
+      "enabled": true,
+      "priority": 2
+    },
+    {
+      "name": "Fashion",
+      "keywords": ["clothing", "shoes", "accessories", "jewelry"],
+      "enabled": true,
+      "priority": 3
+    },
+    {
+      "name": "Books & Media",
+      "keywords": ["books", "movies", "music", "games"],
+      "enabled": true,
+      "priority": 4
+    }
   ],
-  "check_interval": 300,
-  "price_change_threshold": 0.05,
-  "rate_limit": 3,
-  "output_format": "csv",
-  "notifications": {
-    "email_alerts": true,
-    "price_drop_threshold": 0.1,
-    "stock_alerts": true
+  
+  "monitoring_settings": {
+    "check_interval_minutes": 60,
+    "max_products_per_site": 500,
+    "timeout": 30,
+    "retry_attempts": 3,
+    "concurrent_requests": 5,
+    "session_persistence": true
   },
-  "storage": {
-    "save_history": true,
-    "max_history_days": 30
+  
+  "price_tracking": {
+    "track_current_price": true,
+    "track_original_price": true,
+    "track_discount_percentage": true,
+    "track_price_history": true,
+    "detect_price_changes": true,
+    "alert_threshold_percent": 5.0,
+    "minimum_price_change": 1.0
+  },
+  
+  "inventory_monitoring": {
+    "check_availability": true,
+    "track_stock_status": true,
+    "monitor_shipping_options": true,
+    "track_seller_ratings": true,
+    "detect_new_sellers": true
+  },
+  
+  "data_enrichment": {
+    "extract_product_reviews": true,
+    "extract_rating_averages": true,
+    "extract_review_counts": true,
+    "extract_product_images": false,
+    "extract_product_descriptions": true,
+    "categorize_products": true
+  },
+  
+  "alert_system": {
+    "enabled": true,
+    "price_drop_alerts": true,
+    "price_increase_alerts": true,
+    "stock_availability_alerts": true,
+    "new_product_alerts": true,
+    "notification_methods": ["email", "webhook", "slack"]
+  },
+  
+  "analytics": {
+    "price_trend_analysis": true,
+    "competitor_analysis": true,
+    "market_positioning": true,
+    "demand_forecasting": true,
+    "seasonal_patterns": true,
+    "profit_margin_calculations": true
+  },
+  
+  "output_settings": {
+    "default_format": "excel",
+    "available_formats": ["csv", "json", "excel"],
+    "include_charts": true,
+    "include_summary_stats": true,
+    "backup_historical_data": true,
+    "compress_output": false
+  },
+  
+  "reporting": {
+    "daily_summary": true,
+    "weekly_analysis": true,
+    "monthly_trends": true,
+    "competitor_comparison": true,
+    "price_optimization_suggestions": true,
+    "market_opportunity_alerts": true
+  },
+  
+  "ethical_compliance": {
+    "respect_robots_txt": true,
+    "rate_limiting": true,
+    "user_agent_rotation": true,
+    "session_management": true,
+    "no_personal_data": true,
+    "compliance_logging": true
+  },
+  
+  "performance_optimization": {
+    "caching_enabled": true,
+    "cache_duration_hours": 24,
+    "parallel_processing": true,
+    "memory_optimization": true,
+    "database_indexing": true
+  },
+  
+  "monitoring": {
+    "log_level": "INFO",
+    "track_performance": true,
+    "alert_on_errors": true,
+    "uptime_monitoring": true,
+    "data_quality_metrics": true
   }
 }

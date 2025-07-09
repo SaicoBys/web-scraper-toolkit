@@ -8,6 +8,7 @@ import argparse
 from urllib.parse import urljoin, urlparse
 from datetime import datetime
 import os
+from site_manager import SiteManager
 
 class JobScraper:
     """Professional job scraping toolkit for market research and lead generation"""
@@ -18,6 +19,9 @@ class JobScraper:
         self.scraped_jobs = []
         self.session = requests.Session()
         
+        # Initialize site manager
+        self.site_manager = SiteManager(config_file)
+        
         # User agents for rotation
         self.user_agents = [
             'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
@@ -26,7 +30,7 @@ class JobScraper:
         ]
         
         print("🕷️ Job Scraper Toolkit initialized")
-        print(f"📊 Target sites: {len(self.config.get('target_sites', []))}")
+        print(f"📊 Active sites: {len(self.site_manager.active_sites)}")
         print(f"🔄 Rate limit: {self.config.get('rate_limit', 1)} seconds")
     
     def load_config(self, config_file):
