@@ -127,4 +127,4 @@ Perfect for:
 - Data analysts and researchers
 
 ---
-*Professional web scraping toolkit trusted by businesses for ethical data collection*
+*Professional web scraping toolkit for ethical data collection*
